@@ -17,7 +17,7 @@ sudo dnf clean all
 sudo dnf install filebeat -y
 
 echo "--- 3. Habilitando Módulo de Sistema ---"
-sudo filebeat modules enable system
+sudo filebeat modules enable system --os linux
 
 echo "--- 4. Iniciando Servicio ---"
 sudo systemctl enable --now filebeat
