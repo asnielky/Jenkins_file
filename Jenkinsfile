@@ -15,6 +15,7 @@ pipeline {
         }
         stage('Verificación Final') {
             steps {
+		sh 'sleep 5'
                 sh 'sudo systemctl is-active filebeat'
             }
         }
