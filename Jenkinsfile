@@ -4,17 +4,17 @@ pipeline {
         // Borramos el stage de Checkout porque Jenkins ya lo hizo arriba
         stage('Permisos y Validacion') {
             steps {
-                sh 'chmod +x install_filebeat.sh'
+                sh 'sudo chmod +x install_filebeat.sh'
             }
         }
         stage('Despliegue en Servidor') {
             steps {
-                sh './install_filebeat.sh'
+                sh 'sudo ./install_filebeat.sh'
             }
         }
         stage('Verificación Final') {
             steps {
-                sh 'systemctl is-active filebeat'
+                sh 'sudo systemctl is-active filebeat'
             }
         }
     }
