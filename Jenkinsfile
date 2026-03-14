@@ -4,6 +4,7 @@ pipeline {
         // Borramos el stage de Checkout porque Jenkins ya lo hizo arriba
         stage('Permisos y Validacion') {
             steps {
+		sh 'whoami'
                 sh 'sudo chmod +x install_filebeat.sh'
             }
         }
